@@ -6,7 +6,7 @@ window.onload = function (){
 
 
 function hoverOnMouseOver () {
-    this.style.backgroundColor = "#E8A400";
+    this.style.backgroundColor = "#008DE8";
     console.log('in listener');
 }
 
