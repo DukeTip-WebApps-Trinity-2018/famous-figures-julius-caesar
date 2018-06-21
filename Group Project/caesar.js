@@ -1,17 +1,21 @@
 window.onload = function (){
-    document.querySelector("header-right") = headerRightWindow;
+    document.querySelector("#hover").onmouseover = hoverOnMouseOver;
+    document.querySelector("#hover").onmouseout = hoverOnMouseOut;
+    document.querySelector("#windowClose").onclick = clickWindowClose;
 }
 
-function headerRightWindow () {
-    window.open("bibliography.html", "_blank");
-}
-function bigImg(x) {
-   this.style.height = "500px";
-   this.style.width = "500px";
+
+function hoverOnMouseOver () {
+    this.style.backgroundColor = "#E8A400";
+    console.log('in listener');
 }
 
-function normalImg(x) {
-   this.style.height =  "200px";
-   this.style.width = "200px";
+function hoverOnMouseOut () {
+    this.style.backgroundColor = "lightseagreen";
 }
-<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="caesarShanked.png" alt="Smiley" width="200" height="200">
+
+function clickWindowClose () {
+    if (confirm("Close Window?")) {
+        close();
+      }
+}
