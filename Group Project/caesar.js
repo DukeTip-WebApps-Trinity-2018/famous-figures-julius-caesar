@@ -1,21 +1,35 @@
-window.onload = function (){
-    document.querySelector("#hover").onmouseover = hoverOnMouseOver;
-    document.querySelector("#hover").onmouseout = hoverOnMouseOut;
-    document.querySelector("#windowClose").onclick = clickWindowClose;
+$(function () {
+    $("#hover").hover(hoverOnMouseOver, hoverOnMouseOut);
+    $(".Images").hover(imagesOnMouseOver, imagesOnMouseOut);
+    $(".caesarCipher").hover(caesarCipherDecode, caesarCipherEncode);
+    $(".Images").mouseenter(function(){
+        alert("You entered image!");
+    });
+});
+
+function hoverOnMouseOver() {
+    $(this).css({ "background-color": "gray" });
 }
 
-
-function hoverOnMouseOver () {
-    this.style.backgroundColor = "#008DE8";
-    console.log('in listener');
+function hoverOnMouseOut() {
+    $(this).css({ "background-color": "lightseagreen" });
 }
 
-function hoverOnMouseOut () {
-    this.style.backgroundColor = "lightseagreen";
+function imagesOnMouseOver() {
+    $(this).css({ "borderColor": "goldenrod" })
 }
 
-function clickWindowClose () {
-    if (confirm("Close Window?")) {
-        close();
-      }
+function imagesOnMouseOut() {
+    $(this).css({ "borderColor": "rgb(43, 144, 211)" })
 }
+
+function caesarCipherDecode() {
+    $("#caesarHeader").html = ("<h1>Caesar Cipher</h1>");
+    $("#caesarText").html = ("<p>Caesar used this cipher for his private correspondences. Click to reset.</p>");
+}
+
+function caesarCipherEncode() {
+    $("#caesarHeader").html("<h1>Jhlzhy Jpwoly</h1>");
+    $("#caesarText").html("<p>Jhlzhy bzlk aopz jpwoly mvy opz wypchal jvyylzwvuklujlz. Tvyl pumv olyl. Jspjr av ylzla.</p>");
+}
+
